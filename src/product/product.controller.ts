@@ -1,4 +1,4 @@
-import { Controller, Get, Query } from '@nestjs/common';
+import { Controller, Get, Param, Query } from '@nestjs/common';
 import { ProductResponseDTO } from './dtos/product-response.dto';
 import { ProductService } from './product.service';
 
@@ -9,5 +9,10 @@ export class ProductController {
   @Get()
   getProducts(@Query() query): Promise<ProductResponseDTO | {statusText: string}> {
     return this.productService.getProducts(query);
+  }
+
+  @Get(':id')
+  getProductById(@Param('id') id: string): Promise<ProductResponseDTO | {statusText: string}> {
+    return this.productService.getProductById(id);
   }
 }

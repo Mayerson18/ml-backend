@@ -1,4 +1,4 @@
-import { IsBoolean, IsString } from "class-validator";
+import { IsBoolean, IsString, IsOptional, IsNumber } from "class-validator";
 import { PriceDTO } from "./price.dto";
 
 export class ItemDTO {
@@ -18,4 +18,12 @@ export class ItemDTO {
 
   @IsBoolean()
   free_shipping: boolean;
+
+  @IsOptional()
+  @IsNumber()
+  sold_quantity?: number;
+
+  @IsOptional()
+  @IsString()
+  description?: string;
 }
