@@ -71,3 +71,9 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+## Configuration env
+
+add .env file to root project
+
+URL_API="https://api.mercadolibre.com"
